@@ -3,7 +3,7 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+   <% if !enhanced_cart.empty? %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +48,9 @@
       <% end %>
     </div>
   </div>
-
+  <% else %>
+    <div class="alert alert-info" role="alert">
+      <h2>Empty Cart to redirect to <%= link_to "Home", root_path %> </h2>
+    </div>
+  <% end %>
 </section>
